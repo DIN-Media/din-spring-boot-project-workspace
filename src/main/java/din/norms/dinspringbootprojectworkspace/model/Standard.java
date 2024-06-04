@@ -25,7 +25,7 @@ public class Standard {
     @NotEmpty(message = "The dokNr must not be null")
     private String dokNr;
 
-    @Column(name = "issue_date", nullable = false)
+    @Column(name = "issue_date")
     @NotEmpty(message = "The issueDate must not be null")
     private Date issueDate;
 

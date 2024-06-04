@@ -35,9 +35,9 @@ public class StandardsRootController {
     @Produces(MediaType.APPLICATION_JSON)
     @RequestMapping(method = RequestMethod.GET)
     public List<Standard> listAll() {
-        log.info("Fetch all standards in progress...");
+        log.info(":: Fetch all standards in progress...");
         List<Standard> standards = service.listAll();
-        log.info("Standards list fetched!");
+        log.info(":: Standards list fetched!");
 
         return standards;
     }
