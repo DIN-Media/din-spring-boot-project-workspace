@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DinSpringBootProjectWorkspaceApplication {
+public class DinNormsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DinSpringBootProjectWorkspaceApplication.class, args);
+        SpringApplication.run(DinNormsApplication.class, args);
     }
 
 }
