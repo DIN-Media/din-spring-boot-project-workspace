@@ -13,10 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.MockitoAnnotations.openMocks;
 
 /**
- * Test suite for the StandardService class, which provides functionality for managing standards.
+ * Uni-Test suite for the StandardService class, which provides functionality for managing standards.
  * This test suite actually verifies the behavior of the listAll() method, which returns a list of all standards.
  */
 @RequiredArgsConstructor
@@ -30,7 +29,6 @@ public class StandardServiceTest extends UtBase {
     @BeforeEach
     public void setUp() {
         super.setUp();
-        openMocks(this);
     }
 
     /**
