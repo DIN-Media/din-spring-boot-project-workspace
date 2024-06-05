@@ -106,4 +106,25 @@ public class StandardControllerIT extends ItBase {
                 .body("workingGremId", not(contains(randomStandard.getWorkingGremId())))
         ;
     }
+
+    /**
+     * Tests that the listAll() API-Method returns the list of standards sorted by issue date in descending order.
+     */
+    @Test
+    void testListAll_StandardsListSortedByIssueDateDesc() throws ParseException {
+        // Given
+        List<Standard> sortedExpectedStandards = getExpectedStandardsSortedByIssueDateDesc();
+        List<Integer> expectedSortedIds = sortedExpectedStandards.stream().map(Standard::getId).collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+
+        // When
+        preLoadedGiven
+                .log().all()
+                .get(ApiConstants.STANDARDS_ROOT)
+                .then()
+                .log().body()
+                .statusCode(200)
+                .body("size()", is(equalTo(sortedExpectedStandards.size())))
+                .body("id", is(equalTo(expectedSortedIds)))
+        ;
+    }
 }

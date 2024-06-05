@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Test base class for all tests (unit & integration) in this project.
@@ -75,6 +76,17 @@ public class TestsBase {
                 5, "Definition einer Erfolgsmethode zum Labelling von Daten zum Training künstlicher Intelligenz", "DIN DKE SPEC 99001", stringToDateParser("2022-05-01"), "", ""));
 
         return standards;
+    }
+
+    /**
+     * Builds a list of expected standards desc sorted by issue date.
+     *
+     * @return a list of expected standards desc sorted by issue date.
+     * @throws ParseException if the date string cannot be parsed.
+     */
+    protected List<Standard> getExpectedStandardsSortedByIssueDateDesc() throws ParseException {
+        List<Standard> standards = getExpectedStandards();
+        return standards.stream().sorted(Comparator.comparing(Standard::getIssueDate).reversed()).collect(Collectors.toList());
     }
 
     /**
