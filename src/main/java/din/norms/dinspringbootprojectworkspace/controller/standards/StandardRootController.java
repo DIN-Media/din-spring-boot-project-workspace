@@ -3,7 +3,7 @@ package din.norms.dinspringbootprojectworkspace.controller.standards;
 import org.slf4j.*;
 import din.norms.dinspringbootprojectworkspace.controller.ApiConstants;
 import din.norms.dinspringbootprojectworkspace.model.Standard;
-import din.norms.dinspringbootprojectworkspace.service.StandardsService;
+import din.norms.dinspringbootprojectworkspace.service.StandardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +24,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping(ApiConstants.STANDARDS_ROOT)
 @CrossOrigin(origins = ApiConstants.CROSS_ORIGIN_PATH)
-public class StandardsRootController {
-    private static final Logger log = LoggerFactory.getLogger(StandardsRootController.class);
-    private final StandardsService service;
+public class StandardRootController {
+    private static final Logger log = LoggerFactory.getLogger(StandardRootController.class);
+    private final StandardService service;
 
     /**
      * To fetch all Standards from the database.

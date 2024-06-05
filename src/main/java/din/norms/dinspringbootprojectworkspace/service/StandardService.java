@@ -1,7 +1,7 @@
 package din.norms.dinspringbootprojectworkspace.service;
 
 import din.norms.dinspringbootprojectworkspace.model.Standard;
-import din.norms.dinspringbootprojectworkspace.repository.StandardsRepository;
+import din.norms.dinspringbootprojectworkspace.repository.StandardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +12,8 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class StandardsService {
-    private final StandardsRepository repository;
+public class StandardService {
+    private final StandardRepository repository;
 
     /**
      * To fetch all Standards from the database.

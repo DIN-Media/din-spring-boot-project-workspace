@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Repository for the Standards table, to manage CRUD operations on this table.
  */
-public interface StandardsRepository extends JpaRepository<Standard, Integer> {
+public interface StandardRepository extends JpaRepository<Standard, Integer> {
 }
