@@ -7,7 +7,8 @@
     <title>DIN Media - Norms App</title>
 
     <!-- favicon @source https://www.din.de/resource/blob/62430/562536b5ef7f0ffe1474f7743cec9d17/din-favicon.ico -->
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.din.de/resource/blob/62430/562536b5ef7f0ffe1474f7743cec9d17/din-favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://www.din.de/resource/blob/62430/562536b5ef7f0ffe1474f7743cec9d17/din-favicon.ico">
 </head>
 
 <#-- HEADER -->

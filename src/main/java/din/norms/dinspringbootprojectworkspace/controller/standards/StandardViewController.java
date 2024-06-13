@@ -1,17 +1,15 @@
 package din.norms.dinspringbootprojectworkspace.controller.standards;
 
-import org.slf4j.*;
 import din.norms.dinspringbootprojectworkspace.controller.ApiConstants;
-import din.norms.dinspringbootprojectworkspace.model.Standard;
 import din.norms.dinspringbootprojectworkspace.service.StandardService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
-
-
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import java.util.List;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * API Root Controller for the Standards table.
@@ -20,25 +18,24 @@ import java.util.List;
  * for operations that do not apply to Items and therefore do not require Ids.
  */
 @Validated
-@RestController
+@Controller
 @RequiredArgsConstructor
-@RequestMapping(ApiConstants.STANDARDS_ROOT) // Path: ../api/standards
 @CrossOrigin(origins = ApiConstants.CROSS_ORIGIN_PATH)
-public class StandardRootController {
-    private static final Logger log = LoggerFactory.getLogger(StandardRootController.class);
+public class StandardViewController {
+    private static final Logger log = LoggerFactory.getLogger(StandardViewController.class);
     private final StandardService service;
 
     /**
-     * To fetch all Standards from the database.
-     * @return List of Standards
+     * To display the list of Standards.
+     *
+     * @return template name for the Standards list view.
      */
-    @Produces(MediaType.APPLICATION_JSON)
-    @RequestMapping(method = RequestMethod.GET)
-    public List<Standard> listAll() {
+    @GetMapping(ApiConstants.STANDARDS_VIEW) // Path: ../view/standards
+    public String listAll(Model model) {
         log.info(":: Fetch all standards in progress...");
-        List<Standard> standards = service.listAll();
+        model.addAttribute("standards", service.listAll());
         log.info(":: Standards list fetched!");
 
-        return standards;
+        return "standardsView";
     }
 }
