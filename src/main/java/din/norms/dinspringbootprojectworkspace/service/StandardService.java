@@ -17,7 +17,6 @@ public class StandardService {
     private final StandardRepository repository;
 
     /**
-     *
      * To fetch all Standards from the database.
      * @return List of Standards
      */

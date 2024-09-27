@@ -1,7 +1,7 @@
 package din.norms.dinspringbootprojectworkspace.controller;
 
 /**
- * API Constants for the all the API endpoints in this project.
+ * API Constants for all the API endpoints in this project.
  */
 public class ApiConstants {
     // API

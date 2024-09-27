@@ -27,7 +27,6 @@ public class StandardViewController {
 
     /**
      * To display the list of Standards.
-     *
      * @return template name for the Standards list view.
      */
     @GetMapping(ApiConstants.STANDARDS_VIEW) // Path: ../view/standards
